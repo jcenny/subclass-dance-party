@@ -1,5 +1,9 @@
 body, html{
   height:100%;
+  background-image: url("./In-n-out\ background.jpg");
+  background-size: cover;
+  background-position: center;
+
 }
 body{
   margin: 0px;
@@ -24,4 +28,7 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.gif{
+  border: none;
 }
