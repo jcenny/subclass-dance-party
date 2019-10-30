@@ -19,7 +19,6 @@ $(document).ready(function () {
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
@@ -32,9 +31,41 @@ $(document).ready(function () {
     //   pic.replace("90x90", "225x225")
     // }
     // picture();
+    window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
+
+  });
+
+  $('.addLineUpButton').on('click', function (event) {
+    // console.log(window.dancers[0].css({left: '0px'}));
+    window.dancers.forEach(function (dancer) {
+      dancer.css({ left: '0px' });
+    });
+
+  });
+
+  $('.addPairUpButton').on('click', function (event) {
+    // console.log(window.dancers[0].css({left: '0px'}));
+    // var firstDancerLeftProp = window.dancers[0]["0"].style.left;
+    // firstDancerLeftProp = parseInt(firstDancerLeftProp.slice(0, -2));
+    // var firstDancerTopProp = window.dancers[0]["0"].style.top;
+    var firstDancerLeftProp;
+    var firstDancerTopProp;
+    for (let i = 0; i < window.dancers.length; i += 2) {
+      firstDancerLeftProp = window.dancers[i]["0"].style.left;
+      firstDancerLeftProp = parseInt(firstDancerLeftProp.slice(0, -2));
+      firstDancerTopProp = window.dancers[i]["0"].style.top;
+      window.dancers[i + 1].css({ left: (firstDancerLeftProp + 100) + "px", top: firstDancerTopProp });
+
+    }
+    console.log(firstDancerTopProp);
+    // window.dancers[1].css({ left: (firstDancerLeftProp + 100) + "px", top: firstDancerTopProp });
+
+
   });
 
 
 });
+
+
 

@@ -1,7 +1,7 @@
 var makeFriesDancer = function(top, left, timeBetweenSteps) {
   // debugger;
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node.append('<span><img src="https://media.giphy.com/media/26DN3tS5CFxUfAu40/giphy.gif" width="180" height="180" ></img> </span>').addClass("gif");
+  this.$node.append('<img src="https://media.giphy.com/media/26DN3tS5CFxUfAu40/giphy.gif" width="180" height="180" ></img>').addClass("gif gif:hover");
 
   // Dancer.prototype.setPosition.call(this);
 
